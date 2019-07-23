@@ -19,7 +19,7 @@ namespace TodoApi.Controllers
 
       if (_context.TodoItems.Count() == 0)
       {
-        _context.TodoItems.Add(new TodoItem { Name = "Item1" });
+        _context.TodoItems.Add(new TodoItem { Title = "Item1" });
         _context.SaveChanges();
       }
     }
@@ -55,7 +55,7 @@ namespace TodoApi.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<TodoItem>> PustTodoItem(long id, TodoItem item)
+    public async Task<ActionResult<TodoItem>> PutTodoItem(long id, TodoItem item)
     {
       if (id != item.Id)
       {
